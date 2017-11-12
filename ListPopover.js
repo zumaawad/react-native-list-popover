@@ -3,7 +3,7 @@
  */
 "use strict";
 
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {
   ListView,
   StyleSheet,
@@ -12,12 +12,15 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import PropTypes from 'prop-types';
+var createClass = require('create-react-class');
+
 var SCREEN_HEIGHT = Dimensions.get('window').height;
 var noop = () => {};
 var ds = new ListView.DataSource({rowHasChanged: (r1,r2)=>(r1!==r2)});
 
 
-var ListPopover = React.createClass({
+var ListPopover = createClass({
   propTypes: {
     list: PropTypes.array.isRequired,
     isVisible: PropTypes.bool,
